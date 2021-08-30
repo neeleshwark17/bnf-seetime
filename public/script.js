@@ -3,7 +3,7 @@ const socket = io("https://bnf-seetime.herokuapp.com/");
 const videoGrid = document.getElementById("video-grid");
 const myPeer = new Peer(undefined, {
   // host: "/",
-  https:"//bnf-seetime.herokuapp.com/",
+  host: "https://bnf-seetime.herokuapp.com/",
   port: "3001",
 });
 
@@ -21,7 +21,7 @@ navigator.mediaDevices
     addVideoStream(myVideo, stream);
 
     myPeer.on("call", (call) => {
-      console.log('CALLLLL------------------>',call)
+      console.log("CALLLLL------------------>", call);
       call.answer(stream);
 
       const video = document.createElement("video");
@@ -32,12 +32,12 @@ navigator.mediaDevices
 
     socket.on("user-connected", (userId) => {
       // connectToNewUser(userId, stream);
-      setTimeout(connectToNewUser,2000,userId,stream)
+      setTimeout(connectToNewUser, 2000, userId, stream);
     });
   });
 
 socket.on("user-disconnected", (userId) => {
-  if (peers[userId]) {    
+  if (peers[userId]) {
     peers[userId].close();
   }
 });
@@ -47,10 +47,9 @@ myPeer.on("open", (id) => {
 });
 
 function connectToNewUser(userId, stream) {
-
   const call = myPeer.call(userId, stream);
   const video = document.createElement("video");
-  
+
   call.on("stream", (userVideoStream) => {
     console.log("VIDEO--", video, userVideoStream);
     addVideoStream(video, userVideoStream);
