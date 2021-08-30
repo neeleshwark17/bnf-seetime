@@ -1,10 +1,10 @@
 const socket = io("/");
 // const socket = io("https://bnf-seetime.herokuapp.com/");
 const videoGrid = document.getElementById("video-grid");
-const myPeer = new Peer(undefined, {
+const myPeer = new Peer('123', {
   // host: "/",
   // port: "3001",
-  secure: false,
+  secure: true,
   host: "bnf-seetime.herokuapp.com",
   port: "443",
 });
@@ -34,7 +34,7 @@ navigator.mediaDevices
 
     socket.on("user-connected", (userId) => {
       // connectToNewUser(userId, stream);
-      setTimeout(connectToNewUser, 2000, userId, stream);
+      setTimeout(connectToNewUser, 3000, userId, stream);
     });
   });
 
