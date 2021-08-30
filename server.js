@@ -2,12 +2,14 @@ const express = require("express");
 const app = express();
 const socket = require("socket.io");
 const { v4: uuidV4 } = require("uuid");
+const cors=require('cors')
 
 const PORT = process.env.PORT || 3000;
 const server = app.listen(PORT, () => {
   console.log("server running on -", PORT);
 });
 
+app.use(cors())
 var io = socket(server);
 
 app.set("view engine", "ejs");
