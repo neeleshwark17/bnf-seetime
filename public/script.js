@@ -1,15 +1,15 @@
 const socket = io("/");
 const videoGrid = document.getElementById("video-grid");
-// const myPeer = new Peer(undefined, {
-//   host: "/",
-//   port: "3001",
-// });
-
-const myPeer = new Peer({
-  secure: true,
-  host: "bnf-seetime.herokuapp.com",
-  port: 443,
+const myPeer = new Peer(undefined, {
+  host: "/",
+  port: "3001",
 });
+
+// const myPeer = new Peer(undefined,{
+//   secure: true,
+//   host: "bnf-seetime.herokuapp.com",
+//   port: 443,
+// });
 
 const myVideo = document.createElement("video");
 myVideo.muted = true;
