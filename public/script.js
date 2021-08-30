@@ -1,12 +1,11 @@
-// const socket = io("/");
-const socket = io("bnf-seetime.herokuapp.com");
+const socket = io("/");
 const videoGrid = document.getElementById("video-grid");
 const myPeer = new Peer(undefined, {
   // host: "/",
   // port: "3001",
   secure: true,
   host: "bnf-seetime.herokuapp.com",
-  port: "443",
+  port: 443,
 });
 
 const myVideo = document.createElement("video");
