@@ -5,7 +5,7 @@ const videoGrid = document.getElementById("video-grid");
 //   port: "3001",
 // });
 
-const myPeer = new Peer(undefined,{
+const myPeer = new Peer({
   secure: true,
   host: "/",
   port: 8443,
