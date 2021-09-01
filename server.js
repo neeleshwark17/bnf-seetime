@@ -3,7 +3,6 @@ const app = express();
 const socket = require("socket.io");
 const { v4: uuidV4 } = require("uuid");
 const cors = require("cors");
-const path = require("path");
 
 const PORT = process.env.PORT || 3000;
 const server = app.listen(PORT, () => {
