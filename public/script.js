@@ -4,7 +4,7 @@ const videoGrid = document.getElementById("video-grid");
 const myPeer = new Peer({
   secure: true,
   host: "bnf-seetime.herokuapp.com",
-  path: "/",
+  path: "bnf-seetime.herokuapp.com",
   port: 443,
 });
 // myPeer = new Peer({
